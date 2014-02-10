@@ -1,5 +1,10 @@
 APP_KEY = 'TWITTER_APP_KEY'
 APP_SECRET = 'TWITTER_APP_SECRET'
 ACCOUNTS = [
-    'matevzmihalic',
+    'matevzmihalic', 'tweetFurai',
 ]
+NEEDSTAG = {
+	'matevzmihalic': True,
+	'tweetFurai': False 
+}
+TAG = '#tag'

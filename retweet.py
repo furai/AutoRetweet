@@ -10,8 +10,9 @@ class RetweetingStreamer(TwythonStreamer):
         else:
             my_retweets = []
         if len(my_retweets) == 0 and data['user']['screen_name'] in settings.ACCOUNTS:
-            twitter.retweet(id=data['id'])
-            print "Retweeting %s: %s" % (data['user']['name'].encode('utf-8'), data.get('text', "Tweet ID: " + str(data['id'])).encode('utf-8'))
+            if settings.NEEDSTAG.get(data['user']['screen_name'], False) == False or (settings.NEEDSTAG.get(data['user']['screen_name'], False) and data['text'].lower().find(settings.TAG) != -1) :
+                twitter.retweet(id=data['id'])
+                print "Retweeting %s: %s" % (data['user']['name'].encode('utf-8'), data.get('text', "Tweet ID: " + str(data['id'])).encode('utf-8'))
 
     def on_error(self, status_code, data):
         print status_code, data

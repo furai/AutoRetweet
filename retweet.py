@@ -5,6 +5,8 @@ import settings
 
 class RetweetingStreamer(TwythonStreamer):
     def on_success(self, data):
+        if 'delete' in data:
+            return
         if 'retweeted_status' in data:
             my_retweets = [item for item in twitter.get_retweets(id=data['retweeted_status']['id']) if item["user"]['id'] == my_user_id]
         else:

@@ -4,7 +4,7 @@ ACCOUNTS = [
     'matevzmihalic', 'tweetFurai',
 ]
 NEEDSTAG = {
-	'matevzmihalic': True,
-	'tweetFurai': False 
+    'matevzmihalic': True,
+    'tweetFurai': False 
 }
 TAG = '#tag'

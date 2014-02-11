@@ -8,7 +8,7 @@ class RetweetingStreamer(TwythonStreamer):
         if 'delete' in data:
             return
         if 'retweeted_status' in data:
-            my_retweets = [item for item in twitter.get_retweets(id=data['retweeted_status']['id']) if item["user"]['id'] == my_user_id]
+            my_retweets = [item for item in twitter.get_retweets(id=data['retweeted_status']['id'])]
         else:
             my_retweets = []
         if len(my_retweets) == 0 and data['user']['screen_name'] in settings.ACCOUNTS:

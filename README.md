@@ -8,7 +8,7 @@ Installation
 
 * Install python, supervisor and pip
 * Install virtualenv `sudo pip install virtualenv`
-* Clone this repository `git clone https://github.com/lucasgrzegorczyk/AutoRetweet.git`
+* Clone this repository `git clone https://github.com/furai/AutoRetweet.git`
 * cd into AutoRetweet folder and create virtualenv `virtualenv --no-site-packages retweetenv`
 * Activate virtualenv `source retweetenv/bin/activate`
 * Install pip requirements `pip install -r requirements.txt`
